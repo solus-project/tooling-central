@@ -40,6 +40,9 @@ use the Apache-2.0 license. Consult any library licenses that may inadvertently
 relicense the resulting binary when using cgo, i.e. linking to the GPL-3.0
 readline.
 
+**DISCLAIMER**: I Am Not A Lawyer, And Likely Neither Are You. Always ensure
+you are license compliant when linking or importing!
+
 Languages
 ^^^^^^^^^
 
