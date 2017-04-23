@@ -74,6 +74,14 @@ use the Apache-2.0 license. Consult any library licenses that may inadvertently
 relicense the resulting binary when using cgo, i.e. linking to the GPL-3.0
 readline.
 
+Please ensure your repository includes a ``LICENSE`` file, and that all source
+files clearly indicate both copyright and license choice. Please use **short form**
+standard license headers. It is not necessary to include the full terms in a header.
+
+For sample files, tutorials, demos, etc, it is advisable to place them under the
+MIT license, to remove constraints from developers who may be reusing your code
+in their work.
+
 **DISCLAIMER**: I Am Not A Lawyer, And Likely Neither Are You. Always ensure
 you are license compliant when linking or importing!
 
