@@ -49,6 +49,11 @@ Any projects providing a public API/ABI should be fully documented internally.
 For Golang this should be in the godoc format, and for C projects this should
 either be gtk-doc or doxygen.
 
+Going forward, new projects will use Restructured Text (``.rst``) instead of
+markdown (``.md``) for READMEs and other documentary assets on GitHub. This is
+mainly because RST has stricter validation, thus can be easily converted into
+other formats and isn't a loose standard.
+
 
 Licensing
 ^^^^^^^^^
