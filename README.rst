@@ -153,3 +153,25 @@ It is advisable to use your public GPG key to sign all commits and tags::
 Signing your changes (signing off and GPG signing) is highly recommended, as it
 indeed proves the change was really by you, and not anybody else. It allows you
 to own your changes completely, and is a good practice to get into.
+
+Releasing Projects
+^^^^^^^^^^^^^^^^^^
+
+Relying on automatically generated tarballs is no longer sufficient. Using autotools,
+you should be using ``make distcheck`` to create a proper tarball for your tagged
+release, including all required assets/sources. For the Go projects you can use
+``Makefile.gobuild`` to perform a ``make release``, which will in turn create
+a distcheck style release tarball.
+
+Once your tarball is created, upload it to your GitHub releases page (on the relevant
+tag). Now ensure you sign your tarball and upload the accompanying ``.asc`` file to
+verify that this tarball is indeed the one that you created::
+
+    gpg --armor --detach-sign solbuild-1.3.1.tar.gz
+
+Please note that when using ``autotools`` or ``meson``, you must bump your version
+number PRIOR to tagging, in ``configure.ac`` or ``meson.build`` respectively.
+When tagging, ensure to GPG sign it::
+
+    git tag -s v1.3.1
+    git push --tags
