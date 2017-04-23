@@ -14,8 +14,8 @@ Documentation
 
 All binary tools shall provide at minimum:
 
- - A manual page for the main binary (``man(1)``)
- - A manual page for any configuration formats (``man(5)``)
+ * A manual page for the main binary (``man(1)``)
+ * A manual page for any configuration formats (``man(5)``)
 
 Any projects providing a public API/ABI should be fully documented internally.
 For Golang this should be in the godoc format, and for C projects this should
