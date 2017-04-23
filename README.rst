@@ -92,3 +92,64 @@ The preferred tooling language for Solus is Go. However for those providing
 a public API/ABI, it may be deemed suitable to use C. Likewise, some legacy
 projects continue to use Python due to some artificial constraint, such as
 the package manager still being Python.
+
+Using Git
+^^^^^^^^^
+
+Always try to remember that your git commits may serve as documentation to
+others, and indeed, even yourself, later down the road. Two years later you
+may find yourself bisecting a change and having not a clue why you made that
+change, or what regressions it may cause by altering it.
+
+Give a very brief summary in the first line of your commit message, as a very
+very high level overview of what this change is achieving. Then write another
+paragraph (doesn't need to be a story) describing the rationale and results
+of the change itself.
+
+Also remember that the vast majority of git users will be viewing your changes
+on the terminal, so please respect the 80x24 rules! Try not to wrap your lines,
+rather, manually line break them. Your first line should ideally be no longer
+than 60 characters, and each line in the next paragraph shouldn't exceed 70.
+This will ensure the message is readable on all terminals, without enforced
+line wrapping.
+
+
+Here is an example of a good commit message::
+
+    postinstall: Remove all GRUB_BACKGROUND handling
+    
+    We now no longer utilise a default background for GRUB in Solus, purely
+    because its very tacky and hard to get the image placement correct on a
+    multitude of resolutions. Thus we simplify the GRUB code and let CBM
+    handle all the heavy lifting.
+    
+    Signed-off-by: Ikey Doherty <ikey@solus-project.com>
+
+
+An atrocious commit message::
+
+    Another quick fix..
+    
+    Signed-off-by: Ikey Doherty <ikey@solus-project.com>
+
+It is terrible because it hasn't explained anything that has changed, nor the
+rationale.
+
+A badly formatted message::
+
+    This change should fix the styling on the GtkBox that was present in Gtk 3.12 but was later removed due to CSS class changes upstream as of the last sync.
+
+Try to get out of the habit of using ``git commit -m 'My changes'``, instead make
+use of an interactive editor. If you're not comfortable with the default editor,
+then switch it to one that is simpler, such as nano (like I do)::
+
+    git config --global core.editor nano
+
+It is advisable to use your public GPG key to sign all commits and tags::
+
+    git config --global commit.gpgsign true
+    git config --global user.signingkey YOURKEYID
+
+Signing your changes (signing off and GPG signing) is highly recommended, as it
+indeed proves the change was really by you, and not anybody else. It allows you
+to own your changes completely, and is a good practice to get into.
