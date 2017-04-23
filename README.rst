@@ -28,7 +28,7 @@ Standards
 Code hygiene is very important! Make sure you pick and stick to a coding style.
 When using Go, make sure to use the Solus ``Makefile.gobuild`` target and that
 your entire project passes ``make compliant``. For Python projects, you should
-ensure your project is ``pep8`` and `flake8`` compliant.
+ensure your project is ``pep8`` and ``flake8`` compliant.
 
 For C projects, ensure you make use of a `.clang-format` file and enforce a
 fixed style on the codebase. Many Solus projects have example files that you
