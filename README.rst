@@ -186,7 +186,7 @@ following::
 
     git submodule init
     git submodule update
-    git-archive-all.sh --format tar.gz --prefix $(PROJECT_NAME)-$(VERSION)/ --verbose -t HEAD $(PROJECT_NAME)-$(VERSION).tar.gz
+    git-archive-all.sh --format tar.gz --prefix ${PROJECT_NAME}-${VERSION}/ --verbose -t HEAD ${PROJECT_NAME)-${VERSION}.tar.gz
 
 You can find ``git-archive-all.sh`` `here <https://github.com/meitar/git-archive-all.sh/blob/master/git-archive-all.sh>`_.
 
